@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: jjtech-pod
-  namespace: default
+  namespace: application
   labels:
     app: myapp
     run: nginx
