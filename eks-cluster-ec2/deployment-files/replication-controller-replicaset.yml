@@ -18,7 +18,7 @@
 #           image: nginx
 #           ports:
 #             - containerPort: 80
-# --- 
+--- 
 
 apiVersion: apps/v1
 kind: ReplicaSet
@@ -34,10 +34,12 @@ spec:
   selector:    # Required field in Replicaset
     matchLabels:
       run: nginx
+      app: myapp
   template:
     metadata:
       labels:
         run: nginx
+        app: myapp
     spec:
       containers:
       - name: myapp
