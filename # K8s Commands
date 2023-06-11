@@ -31,11 +31,11 @@ kubectl describe pod <pod name> # Get the details about a pod
 
 Kubectl get pod <pod name> -o yaml # Print the manifest configueation file for the pod. This applies to every object in kubernetes.
 
-Kubectl logs <name of pod> # To logs of a particular pod. use ctrl C to stop the process
+Kubectl logs <name of pod>  # To logs of a particular pod. use ctrl C to stop the process
 
 kubectl get pods --show-labels # to show labels of pods
 
-kubectl delete pod <podname> # delete pod from default namespace
+kubectl delete pod <podname> -n <namespace name># delete pod from default namespace
 
 kubectl create -f <yaml file name> # Create a new K8s resource and can only be used once for the same resource. i.e cannot be used to update the resource
 
