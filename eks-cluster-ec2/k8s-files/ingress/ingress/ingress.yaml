@@ -3,11 +3,11 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: app-ingress
-  namespace: application
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}, {"HTTP":80}]'
   labels:
     run: app
 spec:
@@ -18,6 +18,9 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: app-service
+            name: blue-service
             port:
-              number: 80
+              number: 8000
+     
+      
+          
